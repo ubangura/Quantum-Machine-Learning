@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+/* Info Box */
+.ui-widget-content {
+  font-size: 0.8rem;
+  font-family: georgia;
+  line-height: 1.1rem;
+}
+
+/* trim space around info button */
+.ui-button-text-only .ui-button-text {
+  padding: 0px;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: 0px solid #000000 !important;
+}
+
+/* changing dialog close button */
+.ui-dialog-titlebar-close {
+  outline-width: 0px !important;
+  background-color: transparent !important;
+  background-image: url('/icon-close.png') !important;
+  background-repeat: no-repeat !important;
+}
+
+/* changing dialog close button */
+.ui-dialog-titlebar-close:hover,
+.ui-dialog-titlebar-close:focus {
+  background-color: transparent !important;
+  background-image: url('/icon-close.png') !important;
+  background-repeat: no-repeat !important;
+}
+
+/* hide the default "x" close image */
+.ui-dialog-titlebar-close span {
+  display: none !important;
+}
+
+/* translucent background */
+.ui-dialog {
+  opacity: .90;
+  width: 37.5rem !important;
+}
+
+/* Canvas */
+.label {
+  text-shadow: -1px 1px 1px rgb(0, 0, 0);
+  font-size: 1.5rem;
+}
+
+#stateLabel {
+  text-shadow: -1px 1px 1px rgb(255, 255, 255);
+}
+
+#psiLabel {
+  font-size: 1.8rem;
+  text-shadow: -1px 1px 1px rgb(255, 215, 0);
+}
+
+#phiLabel,
+#thetaLabel {
+  font-weight: bold;
+}
+
+#xLabel {
+  color: #1aa3ff;
+}
+
+#yLabel {
+  color: #ffa31a;
+}
+
+#zLabel {
+  color: #ffff1a;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Code Link */
+footer {
+  z-index: 2;
+  position: absolute;
+  top: 95%;
+  right: 1rem;
+  font-size: 1rem;
+  font-family: 'Lucida Grande', 'Lucida Sans Regular', 'Lucida Sans', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #2FA1D6;
+}
