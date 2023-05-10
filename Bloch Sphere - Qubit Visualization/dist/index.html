@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta name="author" content="Unisa Bangura" />
+    <meta
+      name="description"
+      content="A simple tool to visualize the superposition state of a qubit."
+    />
+    <meta
+      name="keywords"
+      content="Bloch Sphere, Qubit, Superposition, Visual, State, Angle, Probability"
+    />
+    <title>Bloch Sphere - Qubit Visualization</title>
+    <script type="module" crossorigin src="/assets/index-e9a8e0a6.js"></script>
+    <link rel="stylesheet" href="/assets/index-07497784.css">
+  </head>
+  <body>
+    <!-- Info Box -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css"
+    />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <div id="infoButton"></div>
+    <div id="infoBox" title="Bloch Sphere">
+      A qubit is a superposition of the basis states \(|0&rangle;\) and
+      \(|1&rangle;\), mathematically written as \(|&psi;> = &alpha;|0&rangle; +
+      &ThickSpace; &beta;|1&rangle;\). We call &alpha; and &beta; (both complex
+      numbers) amplitudes of the basis states. They have the special property
+      that \(|&alpha;|^2 + |&beta;|^2 = 1\). Where \(|&alpha;|^2\) is the
+      probability that the qubit is measured as \(0\) and \(|&beta;|^2\) is the
+      probability that the qubit is measured as \(1\). This makes sense, as a
+      qubit can be measured only as either a \(0\) or \(1\). Acting as if they
+      were real numbers, we could plot the state of a qubit on the unit circle.
+      This establishes a dependence between &alpha; and &beta;.
+      <br /><br />
+      <img src="/plane-2D.jpg" alt="Unit cirlce" />
+      <br />
+      A
+      <strong>Bloch Sphere</strong> is a graphical visualization of the state of
+      a single qubit. On this sphere, the angles &phi; and &theta; are used to
+      define a point on the sphere representing the superposition. For &theta;
+      \(= 0\), the qubit is in the \(|0&rangle;\) state. For &theta; \(= &pi;\),
+      the qubit is in the \(|1&rangle;\) state. For &theta; \(=
+      \frac{&pi;}{2}\), the qubit has a 50% probability of being measured as
+      \(0\) or \(1\). Simply, &theta; determines the horizontal displacement
+      from the origin of the point and the vertical displacement of the point.
+      The closer the superposition point is to a pole the greater the
+      probability the qubit is measured as the state of that pole.
+      <br />
+      <br />
+      <strong>Glossary</strong>
+      <br />
+      &psi; (psi) - superposition
+      <br />
+      &phi; (phi) -
+      <a
+        href="https://pi2-docs.readthedocs.io/en/latest/spherical_coordinates.html"
+        target="_blank"
+        class="link"
+        >azimuthal</a
+      >
+      angle of the bloch sphere; range of [0, 2&pi;]
+      <br />
+      &theta; (the·ta) - polar angle of the bloch sphere; range of [0, &pi;]
+      <br />
+      &alpha; (al·pha) - amplitude of the basis state
+      <br />
+      &beta; (be·ta) - amplitude of the basis state
+    </div>
+
+    <footer>
+      <a
+        href="https://github.com/ubangura/-Quantum-Machine-Learning"
+        target="_blank"
+        >See the code on GitHub!</a
+      >
+    </footer>
+
+    <!-- three.js scene -->
+    <canvas id="visualization"></canvas>
+    <div id="psiLabel">|&Psi;></div>
+    <div id="phiLabel">&phi;</div>
+    <div id="thetaLabel">&theta;</div>
+    
+  </body>
+</html>
