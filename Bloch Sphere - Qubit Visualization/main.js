@@ -327,7 +327,7 @@ angleFolder.open();
 
 // Adjust Theta
 angleFolder
-  .add(thetaData, "thetaLength", 0, Math.PI * 2)
+  .add(thetaData, "thetaLength", 0, Math.PI)
   .name("&theta; Angle")
   .onChange(rerenderTheta);
 
