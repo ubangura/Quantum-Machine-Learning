@@ -1,9 +1,9 @@
 <div align="center">
   
 # Bloch Sphere - Qubit Visualization
-![three.js Badge](https://img.shields.io/badge/Library-three.js-informational?style=flat&logo=threedotjs&logoColor=ffffff&color=2bbc8a)
-![HTML Badge](https://img.shields.io/badge/Code-HTML-informational?style=flat&logo=html5&logoColor=E34F26&color=2bbc8a)
-![CSS Badge](https://img.shields.io/badge/Code-CSS-informational?style=flat&logo=css3&logoColor=1572B6&color=2bbc8a)
+![Three.js](https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=three.js&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
   
 This 3D Bloch Sphere is a simple tool to visualize a qubit's superposition state by changing the polar and azimuth angle. Visit the project here: https://3dblochsphere.netlify.app/
 
