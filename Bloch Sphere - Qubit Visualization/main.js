@@ -1,31 +1,25 @@
 import "./style.css";
 
-// Import three.js
 import * as THREE from "three";
 
-// Move around scene using mouse
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-// For adding text to scene
 import {
   CSS2DRenderer,
   CSS2DObject,
 } from "three/addons/renderers/CSS2DRenderer.js";
 
-// GUI
 import * as dat from "dat.gui";
 
-// Creates responsiveness of scene
+/* Scene Setup */
 const size = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
 
-// Container for objects, lights, & camera
 const scene = new THREE.Scene();
 
-// Camera allows us to see
-// FOV, aspect ratio, view frustrum - controls which objects are visible
+// FOV, aspect ratio, view frustrum
 const camera = new THREE.PerspectiveCamera(
   75,
   size.width / size.height,
@@ -36,7 +30,6 @@ camera.position.setZ(28);
 camera.position.setX(10);
 camera.position.setY(10);
 
-// Renderer creates graphics in the scene
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("#visualization"),
   antialias: true,
@@ -45,26 +38,22 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(size.width, size.height);
 renderer.setClearColor(0x2c3333);
 
-// Lighting
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight);
 
-// Grid
+/* Grids */
 const gridParameter = {
   visible: true,
 };
-
 const gridHelper = new THREE.GridHelper(21, 40);
 scene.add(gridHelper);
 
-// Polar Grid
 const polarGridParameter = {
   visible: false,
 };
-
 const polarGridHelper = new THREE.PolarGridHelper(10, 16, 8, 64);
 
-// Qubit
+/* Qubit */
 const radius = 10;
 const geometry = new THREE.SphereGeometry(radius, 64, 64);
 const material = new THREE.MeshStandardMaterial({
@@ -133,7 +122,7 @@ oneLabel.position.set(0, -23, 0);
 oneLabel.center.set(2, 0);
 grdState.add(oneLabel);
 
-// Axes
+/* Axes */
 const origin = new THREE.Vector3(0, 0, 0);
 const length = 20;
 const headLength = 3;
@@ -225,6 +214,8 @@ zAxis.add(zLabel);
 
 scene.add(yAxis, xAxis, zAxis);
 
+/* Angles */
+
 // Pivot point
 const geometry3 = new THREE.SphereGeometry(0, 0, 0);
 const material3 = new THREE.MeshStandardMaterial();
@@ -275,7 +266,7 @@ phi.add(phiLabel);
 phi.rotation.x = 1.5708;
 phi.rotation.y = 3.14159;
 
-// Psi - superposition point based on theta & phi
+/* Psi - superposition point based on theta & phi */
 const geometry6 = new THREE.SphereGeometry(0.2, 24, 24);
 const material6 = new THREE.MeshStandardMaterial({
   color: 0x000000,
@@ -509,12 +500,10 @@ function rerenderPsiLine() {
   psiLine.geometry = newGeometry;
 }
 
-// Instantiate OrbitControls class
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 5;
 controls.maxDistance = 100;
 
-// Instantiate CSS2DRenderer class
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.setSize(size.width, size.height);
 labelRenderer.domElement.style.position = "absolute";
